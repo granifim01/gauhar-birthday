@@ -1113,16 +1113,66 @@
     })();
   }
 
+  function setupMusic() {
+    const audio = $("#bgMusic");
+    const toggle = $("#musicToggle");
+    if (!audio || !toggle) return { start: () => {} };
+    audio.volume = 0.32;
+    let on = false;
+
+    const sync = () => {
+      toggle.hidden = false;
+      toggle.classList.toggle("is-on", on);
+      toggle.setAttribute("aria-pressed", on ? "true" : "false");
+      toggle.title = on ? "Выключить музыку" : "Включить музыку";
+    };
+
+    const start = () => {
+      audio.play().then(() => {
+        on = true;
+        sync();
+      }).catch(() => {
+        on = false;
+        sync();
+      });
+    };
+
+    toggle.addEventListener("click", () => {
+      if (on) {
+        audio.pause();
+        on = false;
+        sync();
+        return;
+      }
+      audio.play().then(() => {
+        on = true;
+        sync();
+      }).catch(() => {
+        on = false;
+        sync();
+      });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && on) audio.pause();
+      else if (!document.hidden && on) audio.play().catch(() => {});
+    });
+
+    return { start };
+  }
+
   function setupGate() {
     const gate = $("#gate");
     const app = $("#app");
     const btn = $("#enterBtn");
+    const music = setupMusic();
     if (!gate || !app || !btn) return;
     btn.addEventListener("click", () => {
       gate.classList.add("is-gone");
       app.hidden = false;
       app.classList.remove("is-locked");
       document.body.style.overflow = "";
+      music.start();
       setTimeout(() => gate.remove(), 750);
       requestAnimationFrame(() => {
         $$(".hero .reveal").forEach((n, i) => setTimeout(() => n.classList.add("is-in"), 90 + i * 70));

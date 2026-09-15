@@ -1151,6 +1151,43 @@ button {
   z-index: 90;
 }
 
+.music-toggle {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 80;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(247, 251, 248, 0.28);
+  border-radius: 999px;
+  background: rgba(27, 61, 47, 0.72);
+  color: #f7fbf8;
+  font-size: 1.15rem;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(12, 28, 22, 0.28);
+  cursor: pointer;
+}
+
+.music-toggle:not(.is-on) {
+  opacity: 0.72;
+}
+
+.music-toggle:not(.is-on)::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: #f7fbf8;
+  transform: rotate(-35deg);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
 .reveal {
   opacity: 0;
   transform: translate3d(0, 28px, 0);
