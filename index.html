@@ -7,22 +7,22 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Гаухар" />
   <meta name="theme-color" content="#1B3D2F" />
-  <meta name="description" content="С днём рождения, Гаухар — маленький мир, созданный только для тебя." />
+  <meta name="description" content="Маленький мир только для Гаухар." />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <title>Для Гаухар · С днём рождения</title>
+  <title>Для Гаухар</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <div class="petals" aria-hidden="true" id="petals"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
 
   <div class="gate" id="gate">
     <div class="gate__inner">
-      <p class="gate__eyebrow">Только для тебя</p>
+      <p class="gate__eyebrow">секретный подарок</p>
       <h1 class="gate__title">Гаухар</h1>
-      <p class="gate__sub">Открой подарок одним касанием</p>
+      <p class="gate__sub">Нажми — и откроется то, что только между нами</p>
       <button class="gate__btn" id="enterBtn" type="button">Открыть</button>
     </div>
   </div>
@@ -30,188 +30,199 @@
   <main id="app" class="app is-locked" hidden>
     <section class="hero" id="hero">
       <div class="hero__media">
-        <img
-          src="assets/photos/hero-garden.png"
-          alt="Гаухар в соломенной шляпе среди бугенвиллий"
-          class="hero__img"
-          fetchpriority="high"
-        />
+        <img src="assets/photos/hq/hq-125.jpg" alt="Гаухар" class="hero__img" fetchpriority="high" />
         <div class="hero__veil"></div>
       </div>
       <div class="hero__content">
-        <p class="eyebrow reveal">2 октября · твой день</p>
+        <p class="eyebrow reveal">только для тебя</p>
         <h1 class="hero__name reveal">Гаухар</h1>
-        <p class="hero__line reveal">С днём рождения, моё золотце</p>
-        <p class="hero__hint reveal">Листай вниз — там наша история</p>
+        <p class="hero__line reveal">Моё золотце. Жаным менің.</p>
+        <p class="hero__hint reveal">Листай — там наши слова и начало нас</p>
         <div class="scroll-cue reveal" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
     <section class="section letter" id="letter">
       <div class="section__inner">
-        <p class="eyebrow reveal">Письмо</p>
-        <h2 class="section__title reveal">Тебе, Гаухар Далабаева</h2>
-        <p class="letter__meta reveal">Гаухар Бакытжановна · когда-то Кенесбекова · навсегда моя</p>
+        <p class="eyebrow reveal">письмо</p>
+        <h2 class="section__title reveal">С днём рождения</h2>
         <div class="letter__card reveal">
           <p id="typewriter" class="letter__text" aria-live="polite"></p>
-          <p class="letter__sign">— с любовью, Даниял</p>
+          <p class="letter__sign">— Даниял</p>
         </div>
       </div>
     </section>
 
-    <section class="section timeline" id="timeline">
+    <section class="section beginnings" id="beginnings">
       <div class="section__inner">
-        <p class="eyebrow reveal">Мы</p>
-        <h2 class="section__title reveal">Наша линия времени</h2>
-        <p class="section__lead reveal">Моменты, которые я хочу помнить всегда</p>
-        <ol class="timeline__list">
-          <li class="timeline__item reveal">
-            <span class="timeline__dot"></span>
-            <div>
-              <p class="timeline__when">кольцо</p>
-              <h3>Ты стала моей невестой</h3>
-              <p>Тот самый блеск на пальце — и слова «почти замужем».</p>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <span class="timeline__dot"></span>
-            <div>
-              <p class="timeline__when">3 октября 2025 · 11:00</p>
-              <h3>Роспись в Алматы</h3>
-              <p>Медеуский РАГС, ул. Конаева 108. День, когда ты стала Далабаевой.</p>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <span class="timeline__dot"></span>
-            <div>
-              <p class="timeline__when">каждый день</p>
-              <h3>«Жаным» и «золотце»</h3>
-              <p>Тысячи «люблю» в переписке — и всё равно мало.</p>
-            </div>
-          </li>
-          <li class="timeline__item reveal">
-            <span class="timeline__dot"></span>
-            <div>
-              <p class="timeline__when">2 октября</p>
-              <h3>Твой день рождения</h3>
-              <p>Солнце, цветы и ты. Каждый год заново.</p>
-            </div>
-          </li>
-        </ol>
+        <p class="eyebrow reveal">начало</p>
+        <h2 class="section__title reveal">Как мы стали «мы»</h2>
+        <p class="section__lead reveal">Не даты — а кадры, которые до сих пор тёплые</p>
+        <div class="story-list" id="storyList"></div>
+      </div>
+    </section>
+
+    <section class="section dict" id="dict">
+      <div class="section__inner">
+        <p class="eyebrow reveal">наш словарь</p>
+        <h2 class="section__title reveal">Слова, которые звучат как мы</h2>
+        <p class="section__lead reveal">Тапни — откроется перевод «по-нашему»</p>
+        <div class="chips" id="chips"></div>
+      </div>
+    </section>
+
+    <section class="section moments" id="moments">
+      <div class="section__inner section__inner--wide">
+        <p class="eyebrow reveal">в движении</p>
+        <h2 class="section__title reveal">Моменты, которые хочется пересматривать</h2>
+        <p class="section__lead reveal">Листай — видео сами играют без звука</p>
+        <div class="moments__rail" id="momentsRail"></div>
       </div>
     </section>
 
     <section class="section gallery" id="gallery">
-      <div class="section__inner">
-        <p class="eyebrow reveal">Моменты</p>
-        <h2 class="section__title reveal">Ты — в каждом кадре</h2>
-        <p class="section__lead reveal">Из нашей жизни. Без фильтров — только правда.</p>
+      <div class="section__inner section__inner--wide">
+        <p class="eyebrow reveal">ты</p>
+        <h2 class="section__title reveal">Сколько кадров — одна Гаухар</h2>
+        <p class="section__lead reveal">Тапни фото, чтобы увеличить</p>
+        <div class="mosaic" id="mosaic"></div>
+      </div>
+    </section>
 
-        <div class="gallery__rail">
-          <figure class="polaroid reveal" style="--tilt:-3deg">
-            <img src="assets/photos/hero-garden.png" alt="Гаухар среди розовых цветов" loading="lazy" />
-            <figcaption>Солнце, шляпа и цветы</figcaption>
-          </figure>
-          <figure class="polaroid reveal" style="--tilt:2.5deg">
-            <img src="assets/photos/portrait-glasses.png" alt="Гаухар в очках вечером" loading="lazy" />
-            <figcaption>Взгляд, в который я влюбляюсь снова</figcaption>
-          </figure>
-          <figure class="polaroid reveal" style="--tilt:-1.5deg">
-            <img src="assets/photos/portrait-traditional.png" alt="Гаухар в традиционных украшениях" loading="lazy" />
-            <figcaption>Сила и нежность в одном лице</figcaption>
-          </figure>
-          <figure class="polaroid reveal" style="--tilt:2deg">
-            <img src="assets/photos/studio-astana.jpg" alt="Гаухар в студии" loading="lazy" />
-            <figcaption>Уверенная, яркая, настоящая</figcaption>
-          </figure>
-          <figure class="polaroid reveal" style="--tilt:-2deg">
-            <img src="assets/photos/ring.jpg" alt="Кольцо на руке" loading="lazy" />
-            <figcaption>«Но я это кольцо надела»</figcaption>
-          </figure>
-          <figure class="polaroid reveal" style="--tilt:1.5deg">
-            <img src="assets/photos/flowers.jpg" alt="Цветы в подарок" loading="lazy" />
-            <figcaption>Цветочки, как ты любишь</figcaption>
-          </figure>
+    <section class="section looks" id="looks">
+      <div class="section__inner section__inner--wide">
+        <p class="eyebrow reveal">образы</p>
+        <h2 class="section__title reveal">Кинопробы</h2>
+        <div class="look">
+          <div class="look__text reveal">
+            <h3>Берет и чёрное пальто</h3>
+            <p>Как будто кадр, который хочется пересматривать.</p>
+          </div>
+          <div class="look__strip" id="lookBeret"></div>
+        </div>
+        <div class="look">
+          <div class="look__text reveal">
+            <h3>Оливковый вайб</h3>
+            <p>Шляпа, смех, очки — и я уже проиграл.</p>
+          </div>
+          <div class="look__strip" id="lookHat"></div>
+        </div>
+        <div class="look">
+          <div class="look__text reveal">
+            <h3>Живые кадры</h3>
+            <p>Не постановка. Просто ты — в городе, в свете, рядом.</p>
+          </div>
+          <div class="look__strip" id="lookLife"></div>
         </div>
       </div>
     </section>
 
-    <section class="section reasons" id="reasons">
+    <section class="section rituals" id="rituals">
       <div class="section__inner">
-        <p class="eyebrow reveal">Потому что</p>
-        <h2 class="section__title reveal">Почему я тебя люблю</h2>
-        <p class="section__lead reveal">Нажми на карточку — откроется правда</p>
-        <div class="reasons__grid" id="reasonsGrid"></div>
+        <p class="eyebrow reveal">ритуалы</p>
+        <h2 class="section__title reveal">То, что повторяется почти каждый день</h2>
+        <div class="ritual-list" id="ritualsList"></div>
+      </div>
+    </section>
+
+    <section class="section quotes" id="quotes">
+      <div class="section__inner">
+        <p class="eyebrow reveal">из чата</p>
+        <h2 class="section__title reveal">Строчки, которые я сохранил бы навсегда</h2>
+        <div class="quote-wall" id="quoteWall"></div>
+      </div>
+    </section>
+
+    <section class="section openwhen" id="openwhen">
+      <div class="section__inner">
+        <p class="eyebrow reveal">конверты</p>
+        <h2 class="section__title reveal">Открой, когда…</h2>
+        <div class="envelopes" id="envelopes"></div>
+      </div>
+    </section>
+
+    <section class="section stars" id="stars">
+      <div class="section__inner">
+        <p class="eyebrow reveal">созвездие</p>
+        <h2 class="section__title reveal">Нажми на звёзды</h2>
+        <div class="sky" id="sky" aria-label="Созвездие"></div>
+        <p class="sky__msg" id="skyMsg" aria-live="polite">Выбери ★</p>
+      </div>
+    </section>
+
+    <section class="section heartbeat" id="heartbeat">
+      <div class="section__inner">
+        <p class="eyebrow reveal">пульс</p>
+        <h2 class="section__title reveal">Подержи сердце</h2>
+        <p class="section__lead reveal">Зажми и не отпускай</p>
+        <button class="heart-btn reveal" id="heartBtn" type="button" aria-label="Удерживай">
+          <span class="heart-btn__icon">♥</span>
+          <span class="heart-btn__fill" id="heartFill"></span>
+        </button>
+        <p class="heart-btn__hint" id="heartHint">Удерживай…</p>
+      </div>
+    </section>
+
+    <section class="section balloons" id="balloons">
+      <div class="section__inner">
+        <p class="eyebrow reveal">желания</p>
+        <h2 class="section__title reveal">Лопни шарики</h2>
+        <div class="balloon-field" id="balloonField"></div>
       </div>
     </section>
 
     <section class="section scratch-section" id="scratch">
       <div class="section__inner">
-        <p class="eyebrow reveal">Сюрприз</p>
+        <p class="eyebrow reveal">секрет</p>
         <h2 class="section__title reveal">Сотри пальцем</h2>
-        <p class="section__lead reveal">Под слоем спрятано послание только для тебя</p>
         <div class="scratch reveal">
-          <canvas id="scratchCanvas" width="640" height="360" aria-label="Сотри, чтобы увидеть сюрприз"></canvas>
+          <canvas id="scratchCanvas" width="640" height="360" aria-label="Сотри"></canvas>
           <div class="scratch__reveal" aria-hidden="true">
-            <p>Я выбираю тебя.<br />Каждый день.<br />Снова и снова.</p>
+            <p>Я выбираю тебя.<br />Каждый день.<br />Без условий.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section quiz" id="quiz">
-      <div class="section__inner">
-        <p class="eyebrow reveal">Игра</p>
-        <h2 class="section__title reveal">Насколько хорошо ты меня знаешь?</h2>
-        <div class="quiz__card reveal" id="quizCard">
-          <p class="quiz__progress" id="quizProgress">1 / 4</p>
-          <h3 class="quiz__q" id="quizQuestion"></h3>
-          <div class="quiz__options" id="quizOptions"></div>
-          <p class="quiz__feedback" id="quizFeedback" hidden></p>
         </div>
       </div>
     </section>
 
     <section class="section divorce" id="divorce">
       <div class="section__inner">
-        <p class="eyebrow reveal">Важный вопрос</p>
+        <p class="eyebrow reveal">шалость</p>
         <h2 class="section__title reveal">Хочешь ли ты со мной развестись?</h2>
-        <p class="section__lead reveal">Выбери честно. (Ну почти.)</p>
-
+        <p class="section__lead reveal">Попробуй нажать «Да»</p>
         <div class="divorce__stage reveal" id="divorceStage">
           <button class="btn btn--yes" id="yesBtn" type="button">Да</button>
           <button class="btn btn--no" id="noBtn" type="button">Нет</button>
           <p class="divorce__tease" id="divorceTease" aria-live="polite"></p>
         </div>
-
         <div class="divorce__win" id="divorceWin" hidden>
-          <div class="divorce__hearts" aria-hidden="true"></div>
-          <h3>Правильный ответ.</h3>
-          <p>Значит, мы остаёмся вместе — навсегда.<br />С днём рождения, моя Гаухар.</p>
+          <h3>Вот и правильно.</h3>
+          <p>Мы — команда. Навсегда.</p>
         </div>
       </div>
     </section>
 
     <section class="section finale" id="finale">
       <div class="finale__bg">
-        <img src="assets/photos/studio-astana-2.jpg" alt="" aria-hidden="true" />
+        <img src="assets/photos/hq/hq-371.jpg" alt="" aria-hidden="true" />
       </div>
       <div class="finale__content">
-        <p class="eyebrow reveal">Финал</p>
-        <h2 class="finale__title reveal">С днём рождения,<br />Гаухар</h2>
+        <p class="eyebrow reveal">и всё же</p>
+        <h2 class="finale__title reveal">Я просто очень<br />тебя люблю</h2>
         <p class="finale__text reveal">
-          2 октября — твой день. А каждый другой день — наш.
-          Я рядом. Всегда. Жаным менің.
+          Гаухар Далабаева — мой дом, мой смех и самые тёплые «жаным» в чате.
         </p>
         <button class="btn btn--primary reveal" id="replayBtn" type="button">Ещё раз с начала</button>
       </div>
     </section>
 
-    <footer class="footer">
-      <p>Сделано с любовью · только для Гаухар Далабаевой</p>
-    </footer>
+    <footer class="footer"><p>только для Гаухар · из нашего чата с любовью</p></footer>
   </main>
 
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Закрыть">×</button>
+    <img id="lightboxImg" alt="" />
+    <p class="lightbox__cap" id="lightboxCap"></p>
+  </div>
   <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
   <script src="js/main.js"></script>
 </body>

@@ -4,5 +4,13 @@
 *.log
 node_modules/
 .tools/
+_qa/
 assets/photos/review/
+assets/photos/review2/
+assets/photos/pick/
 assets/photos/candidates.txt
+assets/photos/_*/
+assets/photos/_qa*
+qa-*.jpg
+*-UUID*
+*_1_105_c.jpeg
