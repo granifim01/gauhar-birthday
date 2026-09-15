@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#1B3D2F" />
+  <meta name="apple-mobile-web-app-title" content="Гаухар" />
+  <meta name="description" content="С днём рождения, Гаухар — маленький мир, созданный только для тебя." />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <title>Для Гаухар · С днём рождения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="petals" aria-hidden="true" id="petals"></div>
+
+  <!-- Gate: unlocks gestures / optional music on iOS -->
+  <div class="gate" id="gate">
+    <div class="gate__inner">
+      <p class="gate__eyebrow">Только для тебя</p>
+      <h1 class="gate__title">Гаухар</h1>
+      <p class="gate__sub">Открой подарок одним касанием</p>
+      <button class="gate__btn" id="enterBtn" type="button">Открыть</button>
+    </div>
+  </div>
+
+  <main id="app" class="app is-locked" hidden>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__media">
+        <img
+          src="assets/photos/hero-garden.png"
+          alt="Гаухар в соломенной шляпе среди бугенвиллий"
+          class="hero__img"
+          fetchpriority="high"
+        />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow reveal">особенный день</p>
+        <h1 class="hero__name reveal">Гаухар</h1>
+        <p class="hero__line reveal">С днём рождения, моя любовь</p>
+        <p class="hero__hint reveal">Листай вниз — там всё для тебя</p>
+        <div class="scroll-cue reveal" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section class="section letter" id="letter">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Письмо</p>
+        <h2 class="section__title reveal">Тебе, Гаухар Далабаева</h2>
+        <p class="letter__meta reveal">когда-то Кенесбекова · навсегда моя</p>
+        <div class="letter__card reveal">
+          <p id="typewriter" class="letter__text" aria-live="polite"></p>
+          <p class="letter__sign">— с любовью, Даниял</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallery">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Моменты</p>
+        <h2 class="section__title reveal">Ты — в каждом кадре</h2>
+        <p class="section__lead reveal">Три портрета. Одна и та же магия.</p>
+
+        <div class="gallery__rail">
+          <figure class="polaroid reveal" style="--tilt:-3deg">
+            <img src="assets/photos/hero-garden.png" alt="Гаухар среди розовых цветов" loading="lazy" />
+            <figcaption>Солнце, шляпа и цветы — как ты сама</figcaption>
+          </figure>
+          <figure class="polaroid reveal" style="--tilt:2.5deg">
+            <img src="assets/photos/portrait-glasses.png" alt="Гаухар в очках вечером" loading="lazy" />
+            <figcaption>Взгляд, в который я влюбляюсь снова</figcaption>
+          </figure>
+          <figure class="polaroid reveal" style="--tilt:-1.5deg">
+            <img src="assets/photos/portrait-traditional.png" alt="Гаухар в традиционных украшениях" loading="lazy" />
+            <figcaption>Корни, сила и нежность в одном лице</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS -->
+    <section class="section reasons" id="reasons">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Потому что</p>
+        <h2 class="section__title reveal">Почему я тебя люблю</h2>
+        <p class="section__lead reveal">Нажми на карточку — откроется правда</p>
+        <div class="reasons__grid" id="reasonsGrid"></div>
+      </div>
+    </section>
+
+    <!-- SCRATCH -->
+    <section class="section scratch-section" id="scratch">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Сюрприз</p>
+        <h2 class="section__title reveal">Сотри пальцем</h2>
+        <p class="section__lead reveal">Под слоем спрятано послание только для тебя</p>
+        <div class="scratch reveal">
+          <canvas id="scratchCanvas" width="640" height="360" aria-label="Сотри, чтобы увидеть сюрприз"></canvas>
+          <div class="scratch__reveal" aria-hidden="true">
+            <p>Я выбираю тебя.<br />Каждый день.<br />Снова и снова.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section quiz" id="quiz">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Игра</p>
+        <h2 class="section__title reveal">Насколько хорошо ты меня знаешь?</h2>
+        <div class="quiz__card reveal" id="quizCard">
+          <p class="quiz__progress" id="quizProgress">1 / 4</p>
+          <h3 class="quiz__q" id="quizQuestion"></h3>
+          <div class="quiz__options" id="quizOptions"></div>
+          <p class="quiz__feedback" id="quizFeedback" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVORCE INTERACTIVE -->
+    <section class="section divorce" id="divorce">
+      <div class="section__inner">
+        <p class="eyebrow reveal">Важный вопрос</p>
+        <h2 class="section__title reveal">Хочешь ли ты со мной развестись?</h2>
+        <p class="section__lead reveal">Выбери честно. (Ну почти.)</p>
+
+        <div class="divorce__stage reveal" id="divorceStage">
+          <button class="btn btn--yes" id="yesBtn" type="button">Да</button>
+          <button class="btn btn--no" id="noBtn" type="button">Нет</button>
+          <p class="divorce__tease" id="divorceTease" aria-live="polite"></p>
+        </div>
+
+        <div class="divorce__win" id="divorceWin" hidden>
+          <div class="divorce__hearts" aria-hidden="true"></div>
+          <h3>Правильный ответ.</h3>
+          <p>Значит, мы остаёмся вместе — навсегда.<br />С днём рождения, моя Гаухар.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINALE -->
+    <section class="section finale" id="finale">
+      <div class="finale__bg">
+        <img src="assets/photos/portrait-traditional.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="finale__content">
+        <p class="eyebrow reveal">Финал</p>
+        <h2 class="finale__title reveal">С днём рождения,<br />Гаухар</h2>
+        <p class="finale__text reveal">
+          Пусть этот год будет таким же светлым, как твоя улыбка среди цветов.
+          Я рядом. Всегда.
+        </p>
+        <button class="btn btn--primary reveal" id="replayBtn" type="button">Ещё раз с начала</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Сделано с любовью · только для Гаухар</p>
+    </footer>
+  </main>
+
+  <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+  <script src="js/main.js"></script>
+</body>
+</html>
