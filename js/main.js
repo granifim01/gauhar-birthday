@@ -601,45 +601,6 @@
   const TOGETHER_SINCE = "2024-07-11T00:00:00+05:00";
   const WEDDING = "2025-10-03T00:00:00+05:00";
 
-  const QUIZ = [
-    {
-      q: "Когда мы начали нормально переписываться?",
-      a: ["14 февраля", "11 июля", "1 сентября"],
-      ok: 1,
-      yes: "Да! 11 июля 2024 — и на следующий день я уже звал тебя гулять.",
-    },
-    {
-      q: "Какое слово я впервые написал тебе 5 августа перед сном?",
-      a: ["солнце", "зай", "золотце"],
-      ok: 2,
-      yes: "«Спокойной ночи, золотце» — с тех пор так и повелось.",
-    },
-    {
-      q: "Что ты написала мне 7 октября — одним словом?",
-      a: ["Жаным", "Скучаю", "Приезжай"],
-      ok: 0,
-      yes: "Одно слово — и у нас появился свой язык.",
-    },
-    {
-      q: "О чём ты спросила меня 19 декабря?",
-      a: ["Куда поедем летом?", "А ты не можешь сделать мне предложение?", "Что подарить маме?"],
-      ok: 1,
-      yes: "А я уже тогда знал ответ.",
-    },
-    {
-      q: "Когда мы расписались?",
-      a: ["2 октября 2025", "3 октября 2025", "19 декабря 2024"],
-      ok: 1,
-      yes: "3 октября — наш день. Скоро ему год.",
-    },
-    {
-      q: "Сколько «и» в правильном «сильно»?",
-      a: ["Одна", "Четыре", "Чем больше — тем роднее"],
-      ok: 2,
-      yes: "Сиииииильно. Других вариантов нет.",
-    },
-  ];
-
   const COUPONS = [
     { ico: "🤗", title: "Обнимашки вне очереди", text: "В любой момент. Даже посреди дел." },
     { ico: "🍽️", title: "Ужин, который выбираешь ты", text: "Любое место — без «а может, лучше…»" },
@@ -1552,71 +1513,6 @@
     setInterval(tick, 1000);
   }
 
-  function setupQuiz() {
-    const root = $("#quiz");
-    if (!root) return;
-    let step = 0;
-    let score = 0;
-
-    const render = () => {
-      root.innerHTML = "";
-      if (step >= QUIZ.length) {
-        const perfect = score === QUIZ.length;
-        root.innerHTML = `
-          <p class="quiz__score">${score} из ${QUIZ.length}</p>
-          <p class="quiz__q">${perfect ? "Идеально. Ты помнишь всё — как и я." : "Неважно, сколько правильных. Главное — это всё наше."}</p>
-          <button class="btn btn--primary quiz__next" type="button">Ещё раз</button>`;
-        $(".quiz__next", root).addEventListener("click", () => {
-          step = 0;
-          score = 0;
-          render();
-        });
-        if (perfect) burstConfetti();
-        return;
-      }
-      const item = QUIZ[step];
-      const head = document.createElement("p");
-      head.className = "quiz__step";
-      head.textContent = `Вопрос ${step + 1} из ${QUIZ.length}`;
-      const q = document.createElement("p");
-      q.className = "quiz__q";
-      q.textContent = item.q;
-      const opts = document.createElement("div");
-      opts.className = "quiz__opts";
-      const fb = document.createElement("p");
-      fb.className = "quiz__fb";
-      fb.setAttribute("aria-live", "polite");
-      const next = document.createElement("button");
-      next.type = "button";
-      next.className = "btn btn--primary quiz__next";
-      next.textContent = step === QUIZ.length - 1 ? "Результат" : "Дальше";
-      next.hidden = true;
-      next.addEventListener("click", () => {
-        step++;
-        render();
-      });
-      item.a.forEach((text, i) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "quiz__opt";
-        b.textContent = text;
-        b.addEventListener("click", () => {
-          if (opts.classList.contains("is-done")) return;
-          opts.classList.add("is-done");
-          const right = i === item.ok;
-          if (right) score++;
-          b.classList.add(right ? "is-right" : "is-wrong");
-          opts.children[item.ok].classList.add("is-right");
-          fb.textContent = right ? item.yes : `Почти! ${item.yes}`;
-          next.hidden = false;
-        });
-        opts.appendChild(b);
-      });
-      root.append(head, q, opts, fb, next);
-    };
-    render();
-  }
-
   function setupCoupons() {
     const root = $("#coupons");
     if (!root) return;
@@ -1768,7 +1664,6 @@
   setupLightbox();
   setupTogether();
   setupStories();
-  setupQuiz();
   setupChips();
   setupMosaic();
   setupLooks();
