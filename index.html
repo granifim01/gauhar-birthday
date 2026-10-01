@@ -53,12 +53,36 @@
       </div>
     </section>
 
+    <section class="section together" id="together">
+      <div class="section__inner">
+        <p class="eyebrow reveal">счётчик</p>
+        <h2 class="section__title reveal">Мы вместе уже</h2>
+        <div class="together__grid reveal" id="togetherCounter" aria-live="off">
+          <div class="together__cell"><span class="together__num" data-unit="d">0</span><span class="together__lbl">дней</span></div>
+          <div class="together__cell"><span class="together__num" data-unit="h">00</span><span class="together__lbl">часов</span></div>
+          <div class="together__cell"><span class="together__num" data-unit="m">00</span><span class="together__lbl">минут</span></div>
+          <div class="together__cell"><span class="together__num" data-unit="s">00</span><span class="together__lbl">секунд</span></div>
+        </div>
+        <p class="together__married reveal" id="togetherMarried"></p>
+        <p class="together__note reveal" id="togetherNote"></p>
+      </div>
+    </section>
+
     <section class="section beginnings" id="beginnings">
       <div class="section__inner">
         <p class="eyebrow reveal">начало</p>
         <h2 class="section__title reveal">Как мы стали «мы»</h2>
         <p class="section__lead reveal">Не даты — а кадры, которые до сих пор тёплые</p>
         <div class="story-list" id="storyList"></div>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quizSection">
+      <div class="section__inner">
+        <p class="eyebrow reveal">викторина</p>
+        <h2 class="section__title reveal">А ты помнишь?</h2>
+        <p class="section__lead reveal">Шесть вопросов про нас</p>
+        <div class="quiz reveal" id="quiz"></div>
       </div>
     </section>
 
@@ -86,6 +110,7 @@
         <h2 class="section__title reveal">Сколько кадров — одна Гаухар</h2>
         <p class="section__lead reveal">Тапни фото, чтобы увеличить</p>
         <div class="mosaic" id="mosaic"></div>
+        <button class="btn btn--ghost mosaic__more" id="mosaicMore" type="button" hidden>Показать ещё</button>
       </div>
     </section>
 
@@ -133,11 +158,31 @@
       </div>
     </section>
 
+    <section class="section memory-section" id="memorySection">
+      <div class="section__inner">
+        <p class="eyebrow reveal">игра</p>
+        <h2 class="section__title reveal">Найди пары</h2>
+        <p class="section__lead reveal">Открывай по две карточки и ищи одинаковые фото</p>
+        <div class="memory reveal" id="memory"></div>
+        <p class="memory__status" id="memoryStatus" aria-live="polite"></p>
+        <button class="btn btn--primary memory__again" id="memoryAgain" type="button" hidden>Сыграть ещё</button>
+      </div>
+    </section>
+
     <section class="section openwhen" id="openwhen">
       <div class="section__inner">
         <p class="eyebrow reveal">конверты</p>
         <h2 class="section__title reveal">Открой, когда…</h2>
         <div class="envelopes" id="envelopes"></div>
+      </div>
+    </section>
+
+    <section class="section coupons-section" id="couponsSection">
+      <div class="section__inner">
+        <p class="eyebrow reveal">подарок</p>
+        <h2 class="section__title reveal">Купоны на меня</h2>
+        <p class="section__lead reveal">Используй, когда захочешь. Я обязан выполнить</p>
+        <div class="coupons" id="coupons"></div>
       </div>
     </section>
 
@@ -184,19 +229,19 @@
       </div>
     </section>
 
-    <section class="section divorce" id="divorce">
+    <section class="section proposal" id="proposal">
       <div class="section__inner">
-        <p class="eyebrow reveal">шалость</p>
-        <h2 class="section__title reveal">Хочешь ли ты со мной развестись?</h2>
-        <p class="section__lead reveal">Попробуй нажать «Да»</p>
-        <div class="divorce__stage reveal" id="divorceStage">
-          <button class="btn btn--yes" id="yesBtn" type="button">Да</button>
-          <button class="btn btn--no" id="noBtn" type="button">Нет</button>
-          <p class="divorce__tease" id="divorceTease" aria-live="polite"></p>
+        <p class="eyebrow reveal">главный вопрос</p>
+        <h2 class="section__title reveal">Выйдешь за меня снова?</h2>
+        <p class="section__lead reveal">Попробуй нажать «Нет»</p>
+        <div class="proposal__stage reveal" id="proposalStage">
+          <button class="btn btn--agree" id="agreeBtn" type="button">Да</button>
+          <button class="btn btn--flee" id="fleeBtn" type="button">Нет</button>
+          <p class="proposal__tease" id="proposalTease" aria-live="polite"></p>
         </div>
-        <div class="divorce__win" id="divorceWin" hidden>
-          <h3>Вот и правильно.</h3>
-          <p>Мы — команда. Навсегда.</p>
+        <div class="proposal__win" id="proposalWin" hidden>
+          <h3>Я знал.</h3>
+          <p>Каждый год — снова «да». Мы — команда. Навсегда.</p>
         </div>
       </div>
     </section>
@@ -220,12 +265,31 @@
 
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Закрыть">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Предыдущее фото">‹</button>
     <img id="lightboxImg" alt="" />
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Следующее фото">›</button>
     <p class="lightbox__cap" id="lightboxCap"></p>
   </div>
   <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
-  <audio id="bgMusic" src="assets/audio/bg.mp3" loop preload="auto"></audio>
-  <button class="music-toggle" id="musicToggle" type="button" aria-label="Музыка" hidden>♪</button>
+  <audio id="bgMusic" src="assets/audio/bg.mp3" loop preload="none"></audio>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Открыть плеер" hidden>♪</button>
+  <aside class="player" id="player" aria-hidden="true" aria-label="Плеер">
+    <div class="player__head">
+      <div>
+        <p class="player__eyebrow">сейчас играет</p>
+        <p class="player__title" id="playerTitle">M'Dee — спутник</p>
+      </div>
+      <button class="player__close" id="playerClose" type="button" aria-label="Свернуть плеер">×</button>
+    </div>
+    <div class="player__video"><div id="ytPlayer"></div></div>
+    <p class="player__hint" id="playerHint" hidden>Если музыка не включилась сама — нажми ▶ на видео</p>
+    <div class="player__controls">
+      <button id="playerPrev" type="button" aria-label="Предыдущая песня">⏮</button>
+      <button id="playerPlay" type="button" aria-label="Пауза или воспроизведение">▶</button>
+      <button id="playerNext" type="button" aria-label="Следующая песня">⏭</button>
+    </div>
+    <ol class="player__list" id="playerList"></ol>
+  </aside>
   <script src="js/main.js"></script>
 </body>
 </html>
