@@ -67,12 +67,12 @@
     { src: "assets/photos/beret-5.jpg", cap: "У колонны" },
     { src: "assets/photos/beret-6.jpg", cap: "Полный кадр" },
     { src: "assets/photos/beret-7.jpg", cap: "Профиль" },
-    { src: "assets/photos/hat-play-0.jpg", cap: "Гримас" },
+    { src: "assets/photos/hat-play-0.jpg", cap: "Гримаска" },
     { src: "assets/photos/hat-play-1.jpg", cap: "Смех" },
     { src: "assets/photos/hat-play-2.jpg", cap: "Оливковый" },
     { src: "assets/photos/hat-play-3.jpg", cap: "Шляпа" },
     { src: "assets/photos/hat-play-4.jpg", cap: "Игривая" },
-    { src: "assets/photos/hat-play-5.jpg", cap: "Ещё" },
+    { src: "assets/photos/hat-play-5.jpg", cap: "И ещё раз" },
     { src: "assets/photos/cafe-glasses.jpg", cap: "В кафе" },
     { src: "assets/photos/neon-1.jpg", cap: "Неон" },
     { src: "assets/photos/street-1.jpg", cap: "Город" },
@@ -555,6 +555,109 @@
     ],
   };
 
+  const SIZES = {
+    "hq/hq-018.jpg":[665,1182], "hq/hq-020.jpg":[1182,665], "hq/hq-022.jpg":[1182,665],
+    "hq/hq-023.jpg":[665,1182], "hq/hq-030.jpg":[1024,768], "hq/hq-041.jpg":[1024,768],
+    "hq/hq-050.jpg":[1024,768], "hq/hq-053.jpg":[1024,768], "hq/hq-061.jpg":[665,1182],
+    "hq/hq-067.jpg":[665,1182], "hq/hq-078.jpg":[1024,768], "hq/hq-079.jpg":[665,1182],
+    "hq/hq-083.jpg":[665,1182], "hq/hq-090.jpg":[1024,768], "hq/hq-092.jpg":[665,1182],
+    "hq/hq-095.jpg":[1024,768], "hq/hq-120.jpg":[724,1086], "hq/hq-121.jpg":[324,576],
+    "hq/hq-122.jpg":[1024,768], "hq/hq-131.jpg":[665,1182], "hq/hq-135.jpg":[1024,768],
+    "hq/hq-137.jpg":[665,1182], "hq/hq-142.jpg":[1024,768], "hq/hq-145.jpg":[720,1090],
+    "hq/hq-158.jpg":[665,1182], "hq/hq-161.jpg":[665,1182], "hq/hq-165.jpg":[665,1182],
+    "hq/hq-169.jpg":[665,1182], "hq/hq-172.jpg":[324,576], "hq/hq-178.jpg":[665,1182],
+    "hq/hq-183.jpg":[1024,768], "hq/hq-188.jpg":[705,1114], "hq/hq-190.jpg":[576,324],
+    "hq/hq-191.jpg":[1024,768], "hq/hq-195.jpg":[1024,768], "hq/hq-200.jpg":[665,1182],
+    "hq/hq-201.jpg":[576,324], "hq/hq-214.jpg":[665,1182], "hq/hq-217.jpg":[1182,665],
+    "hq/hq-222.jpg":[665,1182], "hq/hq-226.jpg":[665,1182], "hq/hq-235.jpg":[665,1182],
+    "hq/hq-239.jpg":[1024,768], "hq/hq-243.jpg":[665,1182], "hq/hq-253.jpg":[1024,768],
+    "hq/hq-256.jpg":[665,1182], "hq/hq-257.jpg":[665,1182], "hq/hq-268.jpg":[1024,768],
+    "hq/hq-271.jpg":[1024,768], "hq/hq-273.jpg":[665,1182], "hq/hq-280.jpg":[1024,768],
+    "hq/hq-288.jpg":[1024,768], "hq/hq-289.jpg":[1024,768], "hq/hq-297.jpg":[1024,768],
+    "hq/hq-300.jpg":[1024,768], "hq/hq-304.jpg":[665,1182], "hq/hq-307.jpg":[1024,768],
+    "hq/hq-310.jpg":[1024,768], "hq/hq-319.jpg":[1024,768], "hq/hq-324.jpg":[665,1182],
+    "hq/hq-327.jpg":[1024,768], "hq/hq-329.jpg":[324,576], "hq/hq-332.jpg":[665,1182],
+    "hq/hq-338.jpg":[705,1114], "hq/hq-342.jpg":[665,1182], "hq/hq-343.jpg":[1024,768],
+    "hq/hq-346.jpg":[1024,768], "hq/hq-353.jpg":[665,1182], "hq/hq-359.jpg":[665,1182],
+    "hq/hq-373.jpg":[665,1182], "hq/hq-375.jpg":[665,1182], "hq/hq-378.jpg":[1182,665],
+    "hq/hq-381.jpg":[665,1182], "hq/hq-383.jpg":[1024,768], "hq/hq-388.jpg":[1024,768],
+    "hq/hq-389.jpg":[1024,768], "hq/hq-391.jpg":[665,1182], "hq/hq-392.jpg":[665,1182],
+    "hq/hq-393.jpg":[1024,768], "hq/hq-402.jpg":[1182,665], "hq/hq-404.jpg":[1024,768],
+    "hq/hq-405.jpg":[705,1114], "hq/hq-408.jpg":[1024,768], "hq/hq-420.jpg":[1024,768],
+    "beret-3.jpg":[952,1280], "beret-4.jpg":[959,1280], "beret-5.jpg":[959,1280], "beret-6.jpg":[959,1280],
+    "flowers.jpg":[720,1280], "studio-astana.jpg":[854,1280],
+  };
+
+  const TRACKS = [
+    { title: "спутник", yt: "hDBoA3449Aw" },
+    { title: "нужна", yt: "eCT4puTiApo" },
+    { title: "asyl janym", yt: "8b5lPvwsi-0" },
+    { title: "как дома", yt: "crY27nzQxSI", feat: "Ayau, Rusha" },
+    { title: "что такое счастье?", yt: "P6QIF82XFyo" },
+    { title: "даже очень", yt: "yJ9ylqrvrIU" },
+    { title: "под небом Алматы", yt: "S3WclvkB9qg" },
+  ];
+
+  const TOGETHER_SINCE = "2024-07-11T00:00:00+05:00";
+  const WEDDING = "2025-10-03T00:00:00+05:00";
+
+  const QUIZ = [
+    {
+      q: "Когда мы начали нормально переписываться?",
+      a: ["14 февраля", "11 июля", "1 сентября"],
+      ok: 1,
+      yes: "Да! 11 июля 2024 — и на следующий день я уже звал тебя гулять.",
+    },
+    {
+      q: "Какое слово я впервые написал тебе 5 августа перед сном?",
+      a: ["солнце", "зай", "золотце"],
+      ok: 2,
+      yes: "«Спокойной ночи, золотце» — с тех пор так и повелось.",
+    },
+    {
+      q: "Что ты написала мне 7 октября — одним словом?",
+      a: ["Жаным", "Скучаю", "Приезжай"],
+      ok: 0,
+      yes: "Одно слово — и у нас появился свой язык.",
+    },
+    {
+      q: "О чём ты спросила меня 19 декабря?",
+      a: ["Куда поедем летом?", "А ты не можешь сделать мне предложение?", "Что подарить маме?"],
+      ok: 1,
+      yes: "А я уже тогда знал ответ.",
+    },
+    {
+      q: "Когда мы расписались?",
+      a: ["2 октября 2025", "3 октября 2025", "19 декабря 2024"],
+      ok: 1,
+      yes: "3 октября — наш день. Скоро ему год.",
+    },
+    {
+      q: "Сколько «и» в правильном «сильно»?",
+      a: ["Одна", "Четыре", "Чем больше — тем роднее"],
+      ok: 2,
+      yes: "Сиииииильно. Других вариантов нет.",
+    },
+  ];
+
+  const COUPONS = [
+    { ico: "🤗", title: "Обнимашки вне очереди", text: "В любой момент. Даже посреди дел." },
+    { ico: "🍽️", title: "Ужин, который выбираешь ты", text: "Любое место — без «а может, лучше…»" },
+    { ico: "🎬", title: "Фильм на твой выбор", text: "Смотрю до конца и не засыпаю. Обещаю." },
+    { ico: "💆‍♀️", title: "Массаж 20 минут", text: "Плечи, спина — как скажешь." },
+    { ico: "🥐", title: "Завтрак в постель", text: "С кофе и без напоминаний." },
+    { ico: "✨", title: "Одно любое желание", text: "Загадай — я исполню." },
+  ];
+
+  const MEMORY_PHOTOS = [
+    "assets/photos/beret-1.jpg",
+    "assets/photos/hat-play-1.jpg",
+    "assets/photos/cafe-glasses.jpg",
+    "assets/photos/flowers.jpg",
+    "assets/photos/ring.jpg",
+    "assets/photos/neon-1.jpg",
+  ];
+
   const MOMENTS = [
     { src: "assets/videos/spin-home.mp4", poster: "assets/videos/spin-home.jpg", cap: "Дома, как кино" },
     { src: "assets/videos/white-dress.mp4", poster: "assets/videos/white-dress.jpg", cap: "В белом" },
@@ -580,7 +683,6 @@
     { t: "Спокойной ночи, любимая ❤️", who: "я" },
     { t: "Соскучилась 🥹", who: "ты" },
     { t: "Побыть с тобой для меня лучшее свидание", who: "я" },
-    { t: "Я блять замуж собираюсь за тебя", who: "ты" },
     { t: "Спасииибо жаным", who: "ты" },
     { t: "Хотела просто заехать пообнимать )", who: "ты" },
     { t: "Жаным менің", who: "ты" },
@@ -639,8 +741,8 @@
     "Попробуй ещё",
     "Кнопка знает правду",
     "Серьёзно? 😄",
-    "Вселенная против «Да»",
-    "Лучше нажми «Нет»",
+    "Вселенная против «Нет»",
+    "Лучше нажми «Да»",
     "Я быстрее",
   ];
 
@@ -648,30 +750,95 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function openLightbox(src, cap) {
-    const box = $("#lightbox");
+  const thumbOf = (src) => src.replace("assets/photos/", "assets/photos/thumb/");
+  const sizeOf = (src) => SIZES[src.replace("assets/photos/", "")] || [3, 4];
+
+  function lazyImg(src, alt, holder) {
+    const [w, h] = sizeOf(src);
+    const img = document.createElement("img");
+    img.width = w;
+    img.height = h;
+    img.alt = alt;
+    img.loading = "lazy";
+    img.decoding = "async";
+    const done = () => holder.classList.add("is-loaded");
+    img.addEventListener("load", done, { once: true });
+    img.addEventListener("error", done, { once: true });
+    img.src = thumbOf(src);
+    return img;
+  }
+
+  let lbList = [];
+  let lbIndex = 0;
+
+  function showLightboxPhoto() {
     const img = $("#lightboxImg");
     const c = $("#lightboxCap");
-    if (!box || !img) return;
-    img.src = src;
-    img.alt = cap || "";
-    if (c) c.textContent = cap || "";
+    const p = lbList[lbIndex];
+    if (!img || !p) return;
+    img.src = thumbOf(p.src);
+    img.alt = p.cap || "Гаухар";
+    if (c) c.textContent = p.cap || "";
+    const full = new Image();
+    full.onload = () => {
+      if (lbList[lbIndex] === p) img.src = p.src;
+    };
+    full.src = p.src;
+    const many = lbList.length > 1;
+    $("#lightboxPrev").hidden = !many;
+    $("#lightboxNext").hidden = !many;
+  }
+  function openLightbox(list, index) {
+    const box = $("#lightbox");
+    if (!box) return;
+    lbList = list;
+    lbIndex = index;
+    showLightboxPhoto();
     box.hidden = false;
+  }
+  function stepLightbox(d) {
+    if (lbList.length < 2) return;
+    lbIndex = (lbIndex + d + lbList.length) % lbList.length;
+    showLightboxPhoto();
   }
   function closeLightbox() {
     const box = $("#lightbox");
     if (box) box.hidden = true;
   }
+  function setupLightbox() {
+    const box = $("#lightbox");
+    if (!box) return;
+    $("#lightboxClose")?.addEventListener("click", closeLightbox);
+    $("#lightboxPrev")?.addEventListener("click", () => stepLightbox(-1));
+    $("#lightboxNext")?.addEventListener("click", () => stepLightbox(1));
+    box.addEventListener("click", (e) => {
+      if (e.target === box) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (box.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") stepLightbox(-1);
+      else if (e.key === "ArrowRight") stepLightbox(1);
+    });
+    let sx = 0;
+    let sy = 0;
+    box.addEventListener("touchstart", (e) => {
+      sx = e.touches[0].clientX;
+      sy = e.touches[0].clientY;
+    }, { passive: true });
+    box.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - sx;
+      const dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) stepLightbox(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
 
-  function photoBtn(photo) {
+  function photoBtn(photo, list, index) {
     const b = document.createElement("button");
     b.type = "button";
-    const img = document.createElement("img");
-    img.src = photo.src;
-    img.alt = photo.cap || "";
-    img.loading = "lazy";
-    b.appendChild(img);
-    b.addEventListener("click", () => openLightbox(photo.src, photo.cap));
+    b.className = "photo-btn";
+    b.appendChild(lazyImg(photo.src, photo.cap || "Гаухар", b));
+    b.addEventListener("click", () => openLightbox(list, index));
     return b;
   }
 
@@ -713,15 +880,22 @@
   function typeLetter() {
     const el = $("#typewriter");
     if (!el) return;
+    const ghost = document.createElement("span");
+    ghost.className = "letter__ghost";
+    ghost.setAttribute("aria-hidden", "true");
+    ghost.textContent = LETTER;
+    const typed = document.createElement("span");
+    typed.className = "letter__typed";
+    el.append(ghost, typed);
     let i = 0;
     const speed = reduced() ? 0 : 22;
     const tick = () => {
       if (!speed) {
-        el.textContent = LETTER;
+        typed.textContent = LETTER;
         el.classList.add("is-done");
         return;
       }
-      el.textContent = LETTER.slice(0, i++);
+      typed.textContent = LETTER.slice(0, i++);
       if (i <= LETTER.length) setTimeout(tick, speed + (LETTER[i - 1] === "\n" ? 120 : 0));
       else el.classList.add("is-done");
     };
@@ -761,22 +935,44 @@
   function setupMosaic() {
     const root = $("#mosaic");
     if (!root) return;
-    PHOTOS.forEach((p) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "mosaic__item reveal";
-      const label = p.cap ? `<span>${p.cap}</span>` : "";
-      b.innerHTML = `<img src="${p.src}" alt="${p.cap || "Гаухар"}" loading="lazy" />${label}`;
-      b.addEventListener("click", () => openLightbox(p.src, p.cap || "Гаухар"));
-      root.appendChild(b);
-    });
+    const more = $("#mosaicMore");
+    const PAGE = 48;
+    let shown = 0;
+    const renderPage = () => {
+      const frag = document.createDocumentFragment();
+      PHOTOS.slice(shown, shown + PAGE).forEach((p, i) => {
+        const index = shown + i;
+        const [w, h] = sizeOf(p.src);
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "mosaic__item";
+        b.style.aspectRatio = `${w} / ${h}`;
+        b.appendChild(lazyImg(p.src, p.cap || "Гаухар", b));
+        if (p.cap) {
+          const label = document.createElement("span");
+          label.textContent = p.cap;
+          b.appendChild(label);
+        }
+        b.addEventListener("click", () => openLightbox(PHOTOS, index));
+        frag.appendChild(b);
+      });
+      root.appendChild(frag);
+      shown = Math.min(PHOTOS.length, shown + PAGE);
+      if (more) {
+        const left = PHOTOS.length - shown;
+        more.hidden = left <= 0;
+        more.textContent = `Показать ещё ${Math.min(PAGE, left)} из ${left}`;
+      }
+    };
+    more?.addEventListener("click", renderPage);
+    renderPage();
   }
 
   function setupLooks() {
     Object.entries(LOOKS).forEach(([id, list]) => {
       const strip = document.getElementById(id);
       if (!strip) return;
-      list.forEach((p) => strip.appendChild(photoBtn(p)));
+      list.forEach((p, i) => strip.appendChild(photoBtn(p, list, i)));
     });
   }
 
@@ -1019,27 +1215,27 @@
     window.addEventListener("resize", resize);
   }
 
-  function setupDivorce() {
-    const stage = $("#divorceStage");
-    const yes = $("#yesBtn");
-    const no = $("#noBtn");
-    const tease = $("#divorceTease");
-    const win = $("#divorceWin");
-    if (!stage || !yes || !no) return;
+  function setupProposal() {
+    const stage = $("#proposalStage");
+    const noBtn = $("#fleeBtn");
+    const agree = $("#agreeBtn");
+    const tease = $("#proposalTease");
+    const win = $("#proposalWin");
+    if (!stage || !noBtn || !agree) return;
     let moves = 0;
     const place = (x, y) => {
-      yes.style.left = `${x}px`;
-      yes.style.top = `${y}px`;
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
     };
     const center = () => {
       const r = stage.getBoundingClientRect();
-      place(r.width / 2 - yes.offsetWidth - 18, r.height / 2 - yes.offsetHeight / 2 - 12);
+      place(r.width / 2 + 18, r.height / 2 - noBtn.offsetHeight / 2 - 12);
     };
     const flee = () => {
       const r = stage.getBoundingClientRect();
       const pad = 8;
-      const maxX = Math.max(pad, r.width - yes.offsetWidth - pad);
-      const maxY = Math.max(pad, r.height - yes.offsetHeight - pad - 28);
+      const maxX = Math.max(pad, r.width - noBtn.offsetWidth - pad);
+      const maxY = Math.max(pad, r.height - noBtn.offsetHeight - pad - 28);
       place(Math.random() * maxX, Math.random() * maxY);
       moves++;
       if (tease) tease.textContent = TEASES[moves % TEASES.length];
@@ -1047,21 +1243,21 @@
     };
     const approach = (e) => {
       const t = e.touches ? e.touches[0] : e;
-      const r = yes.getBoundingClientRect();
+      const r = noBtn.getBoundingClientRect();
       if (Math.hypot(t.clientX - (r.left + r.width / 2), t.clientY - (r.top + r.height / 2)) < 72) flee();
     };
-    yes.addEventListener("mouseenter", flee);
-    yes.addEventListener("pointerdown", (e) => {
+    noBtn.addEventListener("mouseenter", flee);
+    noBtn.addEventListener("pointerdown", (e) => {
       e.preventDefault();
       flee();
     });
-    yes.addEventListener("click", (e) => {
+    noBtn.addEventListener("click", (e) => {
       e.preventDefault();
       flee();
     });
     stage.addEventListener("mousemove", approach);
     stage.addEventListener("touchmove", approach, { passive: true });
-    no.addEventListener("click", () => {
+    agree.addEventListener("click", () => {
       stage.hidden = true;
       if (win) win.hidden = false;
       burstConfetti();
@@ -1114,51 +1310,437 @@
   }
 
   function setupMusic() {
-    const audio = $("#bgMusic");
     const toggle = $("#musicToggle");
-    if (!audio || !toggle) return { start: () => {} };
-    audio.volume = 0.32;
-    let on = false;
+    const panel = $("#player");
+    const fallbackAudio = $("#bgMusic");
+    if (!toggle || !panel) return { start: () => {} };
+    const titleEl = $("#playerTitle");
+    const hint = $("#playerHint");
+    const list = $("#playerList");
+    const playBtn = $("#playerPlay");
+    let yt = null;
+    let ready = false;
+    let playing = false;
+    let wantPlay = false;
+    let fallback = false;
+    let resumeOnShow = false;
+    let current = 0;
+    let errors = 0;
+
+    const items = TRACKS.map((t, i) => {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "player__track";
+      b.innerHTML = `<span class="player__num">${i + 1}</span><span>${t.title}${t.feat ? ` <small>feat. ${t.feat}</small>` : ""}</span>`;
+      b.addEventListener("click", () => playTrack(i));
+      li.appendChild(b);
+      list?.appendChild(li);
+      return b;
+    });
 
     const sync = () => {
       toggle.hidden = false;
-      toggle.classList.toggle("is-on", on);
-      toggle.setAttribute("aria-pressed", on ? "true" : "false");
-      toggle.title = on ? "Выключить музыку" : "Включить музыку";
+      toggle.classList.toggle("is-on", playing);
+      toggle.setAttribute("aria-label", playing ? "Музыка играет — открыть плеер" : "Открыть плеер");
+      if (playBtn) playBtn.textContent = playing ? "❚❚" : "▶";
+      if (titleEl) titleEl.textContent = fallback ? "Фоновая мелодия" : `M'Dee — ${TRACKS[current].title}`;
+      items.forEach((b, i) => b.classList.toggle("is-current", i === current));
     };
 
-    const start = () => {
-      audio.play().then(() => {
-        on = true;
+    const openPanel = (open) => {
+      panel.classList.toggle("is-open", open);
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+    };
+
+    const playFallback = () => {
+      fallbackAudio?.play().then(() => {
+        playing = true;
         sync();
-      }).catch(() => {
-        on = false;
+      }).catch(() => {});
+    };
+
+    const play = () => {
+      wantPlay = true;
+      if (fallback) playFallback();
+      else if (ready) yt.playVideo();
+    };
+
+    const pause = () => {
+      wantPlay = false;
+      if (fallback) {
+        fallbackAudio?.pause();
+        playing = false;
         sync();
+      } else if (ready) yt.pauseVideo();
+    };
+
+    const playTrack = (i) => {
+      current = (i + TRACKS.length) % TRACKS.length;
+      wantPlay = true;
+      if (ready && !fallback) yt.loadVideoById(TRACKS[current].yt);
+      sync();
+    };
+
+    const checkStarted = () => {
+      setTimeout(() => {
+        if (playing || !wantPlay || fallback) return;
+        openPanel(true);
+        if (hint) hint.hidden = false;
+      }, 2500);
+    };
+
+    const useFallback = () => {
+      if (fallback || ready) return;
+      fallback = true;
+      panel.classList.add("is-fallback");
+      if (wantPlay) playFallback();
+      sync();
+    };
+
+    window.onYouTubeIframeAPIReady = () => {
+      yt = new YT.Player("ytPlayer", {
+        width: "100%",
+        height: "100%",
+        videoId: TRACKS[0].yt,
+        playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
+        events: {
+          onReady: () => {
+            if (fallback) {
+              if (playing) return;
+              fallback = false;
+              panel.classList.remove("is-fallback");
+            }
+            ready = true;
+            yt.setVolume(70);
+            if (wantPlay) {
+              yt.playVideo();
+              checkStarted();
+            }
+            sync();
+          },
+          onStateChange: (e) => {
+            const S = YT.PlayerState;
+            if (e.data === S.PLAYING) {
+              playing = true;
+              wantPlay = true;
+              errors = 0;
+              if (hint) hint.hidden = true;
+            } else if (e.data === S.PAUSED) {
+              playing = false;
+            } else if (e.data === S.ENDED) {
+              playing = false;
+              playTrack(current + 1);
+            }
+            sync();
+          },
+          onError: () => {
+            if (++errors >= TRACKS.length) {
+              ready = false;
+              useFallback();
+              return;
+            }
+            playTrack(current + 1);
+          },
+        },
       });
     };
+
+    const api = document.createElement("script");
+    api.src = "https://www.youtube.com/iframe_api";
+    api.async = true;
+    api.onerror = useFallback;
+    document.head.appendChild(api);
+    setTimeout(() => {
+      if (!ready) useFallback();
+    }, 15000);
 
     toggle.addEventListener("click", () => {
-      if (on) {
-        audio.pause();
-        on = false;
-        sync();
+      if (fallback) {
+        if (playing) pause();
+        else play();
         return;
       }
-      audio.play().then(() => {
-        on = true;
-        sync();
-      }).catch(() => {
-        on = false;
-        sync();
-      });
+      openPanel(!panel.classList.contains("is-open"));
     });
+    $("#playerClose")?.addEventListener("click", () => openPanel(false));
+    $("#playerPrev")?.addEventListener("click", () => playTrack(current - 1));
+    $("#playerNext")?.addEventListener("click", () => playTrack(current + 1));
+    playBtn?.addEventListener("click", () => (playing ? pause() : play()));
 
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden && on) audio.pause();
-      else if (!document.hidden && on) audio.play().catch(() => {});
+      if (document.hidden) {
+        if (!playing) return;
+        resumeOnShow = true;
+        if (fallback) fallbackAudio?.pause();
+        else if (ready) yt.pauseVideo();
+      } else if (resumeOnShow) {
+        resumeOnShow = false;
+        play();
+      }
     });
 
+    sync();
+    toggle.hidden = true;
+
+    const start = () => {
+      wantPlay = true;
+      toggle.hidden = false;
+      if (fallback) playFallback();
+      else if (ready) yt.playVideo();
+      checkStarted();
+    };
+
     return { start };
+  }
+
+  const plural = (n, forms) => {
+    const a = Math.abs(n) % 100;
+    const b = a % 10;
+    if (a > 10 && a < 20) return forms[2];
+    if (b > 1 && b < 5) return forms[1];
+    if (b === 1) return forms[0];
+    return forms[2];
+  };
+
+  function setupTogether() {
+    const root = $("#togetherCounter");
+    const married = $("#togetherMarried");
+    const note = $("#togetherNote");
+    if (!root) return;
+    const since = new Date(TOGETHER_SINCE).getTime();
+    const wedding = new Date(WEDDING).getTime();
+    const cell = (u) => $(`[data-unit="${u}"]`, root);
+    const units = { d: cell("d"), h: cell("h"), m: cell("m"), s: cell("s") };
+    const DAY = 86400000;
+    const ORD = ["", "первая", "вторая", "третья", "четвёртая", "пятая"];
+    const ORD_GEN = ["", "первой", "второй", "третьей", "четвёртой", "пятой"];
+
+    const anniversary = () => {
+      const a = new Date(Date.now() + 5 * 3600000);
+      const today = Date.UTC(a.getUTCFullYear(), a.getUTCMonth(), a.getUTCDate());
+      let year = a.getUTCFullYear();
+      let next = Date.UTC(year, 9, 3);
+      if (next < today) next = Date.UTC(++year, 9, 3);
+      const n = year - 2025;
+      const ord = ORD[n] || `${n}-я`;
+      const ordGen = ORD_GEN[n] || `${n}-й`;
+      const left = Math.round((next - today) / DAY);
+      if (left === 0) return `Сегодня наша ${ord} годовщина свадьбы 💍`;
+      if (left === 1) return `Завтра — наша ${ord} годовщина свадьбы 💍`;
+      return `До нашей ${ordGen} годовщины свадьбы — ${left} ${plural(left, ["день", "дня", "дней"])}`;
+    };
+
+    const tick = () => {
+      const now = Date.now();
+      let t = Math.max(0, Math.floor((now - since) / 1000));
+      const d = Math.floor(t / 86400);
+      t -= d * 86400;
+      const h = Math.floor(t / 3600);
+      t -= h * 3600;
+      const m = Math.floor(t / 60);
+      const s = t - m * 60;
+      units.d.textContent = d;
+      units.h.textContent = String(h).padStart(2, "0");
+      units.m.textContent = String(m).padStart(2, "0");
+      units.s.textContent = String(s).padStart(2, "0");
+      const md = Math.floor((now - wedding) / DAY);
+      if (married) married.textContent = md >= 0 ? `Из них женаты — ${md} ${plural(md, ["день", "дня", "дней"])}` : "";
+      if (note) note.textContent = anniversary();
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  function setupQuiz() {
+    const root = $("#quiz");
+    if (!root) return;
+    let step = 0;
+    let score = 0;
+
+    const render = () => {
+      root.innerHTML = "";
+      if (step >= QUIZ.length) {
+        const perfect = score === QUIZ.length;
+        root.innerHTML = `
+          <p class="quiz__score">${score} из ${QUIZ.length}</p>
+          <p class="quiz__q">${perfect ? "Идеально. Ты помнишь всё — как и я." : "Неважно, сколько правильных. Главное — это всё наше."}</p>
+          <button class="btn btn--primary quiz__next" type="button">Ещё раз</button>`;
+        $(".quiz__next", root).addEventListener("click", () => {
+          step = 0;
+          score = 0;
+          render();
+        });
+        if (perfect) burstConfetti();
+        return;
+      }
+      const item = QUIZ[step];
+      const head = document.createElement("p");
+      head.className = "quiz__step";
+      head.textContent = `Вопрос ${step + 1} из ${QUIZ.length}`;
+      const q = document.createElement("p");
+      q.className = "quiz__q";
+      q.textContent = item.q;
+      const opts = document.createElement("div");
+      opts.className = "quiz__opts";
+      const fb = document.createElement("p");
+      fb.className = "quiz__fb";
+      fb.setAttribute("aria-live", "polite");
+      const next = document.createElement("button");
+      next.type = "button";
+      next.className = "btn btn--primary quiz__next";
+      next.textContent = step === QUIZ.length - 1 ? "Результат" : "Дальше";
+      next.hidden = true;
+      next.addEventListener("click", () => {
+        step++;
+        render();
+      });
+      item.a.forEach((text, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "quiz__opt";
+        b.textContent = text;
+        b.addEventListener("click", () => {
+          if (opts.classList.contains("is-done")) return;
+          opts.classList.add("is-done");
+          const right = i === item.ok;
+          if (right) score++;
+          b.classList.add(right ? "is-right" : "is-wrong");
+          opts.children[item.ok].classList.add("is-right");
+          fb.textContent = right ? item.yes : `Почти! ${item.yes}`;
+          next.hidden = false;
+        });
+        opts.appendChild(b);
+      });
+      root.append(head, q, opts, fb, next);
+    };
+    render();
+  }
+
+  function setupCoupons() {
+    const root = $("#coupons");
+    if (!root) return;
+    const KEY = "gauhar-coupons";
+    let used = {};
+    try {
+      used = JSON.parse(localStorage.getItem(KEY)) || {};
+    } catch (e) {
+      used = {};
+    }
+    const save = () => {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(used));
+      } catch (e) {}
+    };
+    COUPONS.forEach((c, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "coupon reveal";
+      const status = document.createElement("p");
+      status.className = "coupon__status";
+      b.innerHTML = `<span class="coupon__ico" aria-hidden="true">${c.ico}</span><span class="coupon__body"><span class="coupon__title">${c.title}</span><span class="coupon__text">${c.text}</span></span>`;
+      $(".coupon__body", b).appendChild(status);
+      let armed = 0;
+      const paint = () => {
+        b.classList.toggle("is-used", !!used[i]);
+        b.classList.toggle("is-armed", !!armed && !used[i]);
+        status.textContent = used[i]
+          ? `Активирован ${used[i]} — покажи мне этот экран`
+          : armed
+            ? "Нажми ещё раз, чтобы активировать"
+            : "Тапни, чтобы использовать";
+      };
+      b.addEventListener("click", () => {
+        if (used[i]) return;
+        if (!armed) {
+          armed = setTimeout(() => {
+            armed = 0;
+            paint();
+          }, 3500);
+          paint();
+          return;
+        }
+        clearTimeout(armed);
+        armed = 0;
+        used[i] = new Date().toLocaleDateString("ru-RU", { day: "numeric", month: "long" });
+        save();
+        paint();
+        burstConfetti();
+      });
+      paint();
+      root.appendChild(b);
+    });
+  }
+
+  function setupMemory() {
+    const root = $("#memory");
+    const status = $("#memoryStatus");
+    const again = $("#memoryAgain");
+    if (!root) return;
+    let first = null;
+    let lock = false;
+    let found = 0;
+    let moves = 0;
+
+    const setStatus = () => {
+      if (!status) return;
+      status.textContent = found === MEMORY_PHOTOS.length
+        ? `Все пары за ${moves} ${plural(moves, ["ход", "хода", "ходов"])}. Как мы с тобой — идеальная пара 💞`
+        : `Ходов: ${moves} · Пар: ${found} из ${MEMORY_PHOTOS.length}`;
+    };
+
+    const deal = () => {
+      root.innerHTML = "";
+      first = null;
+      lock = false;
+      found = 0;
+      moves = 0;
+      if (again) again.hidden = true;
+      const deck = [...MEMORY_PHOTOS, ...MEMORY_PHOTOS]
+        .map((src) => ({ src, r: Math.random() }))
+        .sort((a, b) => a.r - b.r);
+      deck.forEach(({ src }) => {
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "memory__card";
+        card.dataset.src = src;
+        card.setAttribute("aria-label", "Карточка");
+        card.innerHTML = `<span class="memory__inner"><span class="memory__back" aria-hidden="true">♥</span><span class="memory__front"><img src="${thumbOf(src)}" alt="" loading="lazy" decoding="async" /></span></span>`;
+        card.addEventListener("click", () => {
+          if (lock || card === first || card.classList.contains("is-open")) return;
+          card.classList.add("is-open");
+          if (!first) {
+            first = card;
+            return;
+          }
+          moves++;
+          if (first.dataset.src === card.dataset.src) {
+            first.classList.add("is-matched");
+            card.classList.add("is-matched");
+            first = null;
+            found++;
+            if (found === MEMORY_PHOTOS.length) {
+              burstConfetti();
+              if (again) again.hidden = false;
+            }
+          } else {
+            lock = true;
+            const a = first;
+            first = null;
+            setTimeout(() => {
+              a.classList.remove("is-open");
+              card.classList.remove("is-open");
+              lock = false;
+            }, 850);
+          }
+          setStatus();
+        });
+        root.appendChild(card);
+      });
+      setStatus();
+    };
+    again?.addEventListener("click", deal);
+    deal();
   }
 
   function setupGate() {
@@ -1183,25 +1765,26 @@
   document.body.style.overflow = "hidden";
   spawnPetals();
   setupGate();
+  setupLightbox();
+  setupTogether();
   setupStories();
+  setupQuiz();
   setupChips();
   setupMosaic();
   setupLooks();
   setupMoments();
   setupRituals();
   setupQuotes();
+  setupMemory();
   setupEnvelopes();
+  setupCoupons();
   setupStars();
   setupHeart();
   setupBalloons();
   setupScratch();
-  setupDivorce();
+  setupProposal();
   setupReveals();
   typeLetter();
-  $("#lightboxClose")?.addEventListener("click", closeLightbox);
-  $("#lightbox")?.addEventListener("click", (e) => {
-    if (e.target.id === "lightbox") closeLightbox();
-  });
   $("#replayBtn")?.addEventListener("click", () => {
     scrollTo({ top: 0, behavior: reduced() ? "auto" : "smooth" });
   });
